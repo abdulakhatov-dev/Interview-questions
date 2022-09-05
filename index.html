@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <marquee> and </marquee>
+    <p>Disk Usage: <meter value="0.2">20%</meter></p>
+
+<p>Total Score: <meter value="6" min="0" max="10">6 out of 10</meter></p>
+
+<p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+    <input type="range" id="a" value="50"> +
+    <input type="number" id="b" value="100"> =
+    <output name="result" for="a b"></output>
+  </form>
+
+  <p>Progress: <progress id="bar" value="0" max="100"><span>0</span>%</progress></p>
+
+<script type="text/javascript">
+    var i = 0;
+    var progressBar = document.getElementById("bar");
+    
+    function countNumbers() {
+      if(i < 100) {
+        i = i + 1;
+        progressBar.value = i;
+        // For browsers that don't support progress tag
+        progressBar.getElementsByTagName("span")[0].textContent = i;
+      }
+
+      // Wait for sometime before running this script again
+      setTimeout("countNumbers()", 100);
+    }
+    countNumbers();
+</script>
+</body>
+</html>
